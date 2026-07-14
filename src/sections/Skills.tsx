@@ -87,7 +87,8 @@ export default function Skills() {
         <p className="section-subheading">Technologies I work with to build full-stack solutions</p>
       </div>
 
-      <div className="flex justify-center">
+      {/* Desktop: orbital animation */}
+      <div className="hidden md:flex justify-center">
         <div
           ref={containerRef}
           style={{ width: SIZE, height: SIZE, position: 'relative', maxWidth: '100%' }}
@@ -182,6 +183,37 @@ export default function Skills() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Mobile: grouped grid */}
+      <div className="md:hidden space-y-8">
+        {(Object.entries(skills) as [string, typeof skills.Frontend][]).map(([category, items]) => (
+          <div key={category}>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-4 text-center">{category}</h3>
+            <div className="grid grid-cols-3 gap-3">
+              {items.map(skill => (
+                <div
+                  key={skill.name}
+                  className="glass rounded-xl p-3 flex flex-col items-center gap-2"
+                >
+                  <div
+                    style={{
+                      width: 40, height: 40,
+                      borderRadius: '50%',
+                      background: 'rgba(255,255,255,0.05)',
+                      border: `1.5px solid ${skill.color}44`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      color: skill.color, fontSize: 20,
+                    }}
+                  >
+                    {iconMap[skill.icon]}
+                  </div>
+                  <span className="text-xs text-gray-400 text-center leading-tight">{skill.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </SectionWrapper>
   );

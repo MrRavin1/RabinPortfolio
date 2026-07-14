@@ -31,7 +31,7 @@ export default function Projects() {
                   loading="lazy"
                 />
               </div>
-              <div className="lg:col-span-3 p-8 flex flex-col justify-between">
+              <div className="lg:col-span-3 p-5 sm:p-8 flex flex-col justify-between">
                 <div>
                   {project.featured && (
                     <div className="flex items-center gap-2 mb-3">

@@ -61,7 +61,7 @@ export default function Contact() {
 
         <motion.form
           onSubmit={handleSubmit}
-          className="glass rounded-2xl p-8 space-y-5"
+          className="glass rounded-2xl p-5 sm:p-8 space-y-5"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
